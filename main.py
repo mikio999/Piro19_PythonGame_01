@@ -1,6 +1,8 @@
 import math 
 import random
-import intro
+import intro 
+import result
+
 def lose_life () : #괄호안에 loser 들어감, 6번 담당
    
     return
@@ -33,7 +35,7 @@ intro.intro()
 #Game 5 김정곤
 
 def main_game ():
-    pass
+
     #1
 
     #2
@@ -48,7 +50,7 @@ def main_game ():
         #game 1,2,3,4,5
         
         #6
-
+        result.result()
     #7
 
 main_game()
