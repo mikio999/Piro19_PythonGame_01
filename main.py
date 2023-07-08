@@ -1,6 +1,6 @@
 import math 
 import random
-
+import intro
 def lose_life () : #괄호안에 loser 들어감, 6번 담당
    
     return
@@ -9,7 +9,7 @@ player_dic = {} # {'player': [life, left_life] }
 
 
 #1
-
+intro.intro()
 #2
 
 #3 
