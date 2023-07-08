@@ -1,6 +1,8 @@
 import math 
 import random
 import intro
+import game1
+
 # def lose_life () : #괄호안에 loser 들어감, 6번 담당
    
 #     return
@@ -8,8 +10,8 @@ import intro
 # player_dic = {} # {'player': [life, left_life] }
 
 
-#1~3 intro 함수: return [name, life] 
-my_name, my_life = intro.intro()
+# #1~3 intro 함수: return [name, life] 
+# my_name, my_life = intro.intro()
     
 #4
 
@@ -30,12 +32,8 @@ my_name, my_life = intro.intro()
 #Game 5 김정곤
 
 def main_game ():
-    pass
-    #1
-
-    #2
-
-    #3
+    #1~3 intro 함수: return [name, life] 
+    my_name, my_life = intro.intro()
 
     #4
 
@@ -43,6 +41,7 @@ def main_game ():
         #5
         
         #game 1,2,3,4,5
+        # game1.apart(pNum)
         
         #6
 
