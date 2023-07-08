@@ -1,3 +1,3 @@
-import result
-
 result.result()
+
+import result
