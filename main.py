@@ -1,5 +1,7 @@
 import math 
 import random
+import intro 
+import result
 
 def lose_life () : #괄호안에 loser 들어감, 6번 담당
    
@@ -9,7 +11,7 @@ player_dic = {} # {'player': [life, left_life] }
 
 
 #1
-
+intro.intro()
 #2
 
 #3 
@@ -33,7 +35,7 @@ player_dic = {} # {'player': [life, left_life] }
 #Game 5 김정곤
 
 def main_game ():
-    pass
+
     #1
 
     #2
@@ -48,7 +50,7 @@ def main_game ():
         #game 1,2,3,4,5
         
         #6
-
+        result.result()
     #7
 
 main_game()
