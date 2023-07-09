@@ -55,9 +55,6 @@ def checkBomb(start_time, player):
         printMiniGameOutro(player)
         exit()
 
-def temp():
-    print('hello world!')
-
 def bomb():
     #폭탄돌리기 게임에 필요한 정보
     stations = getStationInfoByScraping()
@@ -86,5 +83,3 @@ def bomb():
                     mention.append(station)
                     break
             print('    💣 폭탄넘기기 성공!')
-
-bomb()
