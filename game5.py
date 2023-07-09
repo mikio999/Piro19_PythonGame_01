@@ -3,7 +3,7 @@ from time import *
 
 ##############Example#############
 guest_number = 2
-player_dic = {'정곤':[4,2],'현지':[5,1],'민경':[5,1],'환희':[5,1]}
+player_dic = {'정곤':[4,2],'현지':[5,1],'민경':[5,1]}
 player='정곤'
 
 #player_dic = {이름,[life,left_life], 내 숫자, 고른 숫자}
@@ -102,6 +102,10 @@ while (i<=count):
     print (i)
 
     if len(player_list)==4 :
+        p_0=player_list[0]
+        p_1=player_list[1]
+        p_2=player_list[2]
+        p_3=player_list[3]
         if turn == player_list[0] :
             if next_turn == player_list[1] : 
                 c = ' → '
@@ -131,16 +135,21 @@ while (i<=count):
             if next_turn == player_list[2] : 
                 e = ' ← '
         print(f'''
-    정곤 {c} {c} {c} {c} 현지 
+
+
+    {p_0} {c} {c} {c} {c} {p_1}
     {d}  {b} {n} {n} {a}  {f}               
     {d}  {n} {b} {a} {n}  {f}  
     {d}  {n} {a} {b} {n}  {f}           
     {d}  {a} {n} {n} {b}  {f}  
-    민경 {e} {e} {e} {e} 환희
+    {p_1} {e} {e} {e} {e} {p_1}
     ''')
         
 
     if len(player_list)==3 :
+        p_0=player_list[0]
+        p_1=player_list[1]
+        p_2=player_list[2]
         if turn == player_list[0] :
             if next_turn == player_list[1] : 
                 b = ' ↙ '
@@ -157,20 +166,22 @@ while (i<=count):
             if next_turn == player_list[1] : 
                 a = ' ← '
         print(f'''
-              정곤
+             {p_0}
             {b}  {c} 
          {b}  {n}  {c}   
-      현지{a} {a} {a}민경
+      {p_1} {a} {a} {p_2}
     ''')
         
     if len(player_list)==2 :
+        p_0=player_list[0]
+        p_1=player_list[1]
         if turn == player_list[0] :
             a = ' → '
         if turn == player_list[1] :
             a = ' ← '
 
         print(f'''
-    정곤 {a} {a} {a} 현지
+    {p_0} {a} {a} {a} {p_1}
     ''')
          
     a='   '
@@ -189,10 +200,13 @@ while (i<=count):
             next_turn = value[3]
     i = i+1
 
-    
+
 for key, value in player_dic.items():
-        if value[2] == turn:
-            loser = key
+    if value[2] == turn:
+        loser = key
+    del value[3]    
+    del value[2]
+
 print(loser)
 print(player_dic)
 
