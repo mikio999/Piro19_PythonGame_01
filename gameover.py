@@ -1,6 +1,5 @@
-def game_over(player_dic):
-  for key in player_dic:
-      print(key,"은(는) 지금까지", life-left_life,"! 치사량까지",left life)
+def game_over(key):
+  print(key + '가 뒤짐')
       
   print("""
 

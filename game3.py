@@ -49,6 +49,8 @@ def checkBomb(start_time, player):
     current_time = datetime.now()
     if (current_time - start_time).seconds >= 30:
         printMiniGameOutro(player)
+        return True 
+    return False 
         
 
 def bomb(turn, players, player_dic):
@@ -67,7 +69,9 @@ def bomb(turn, players, player_dic):
 
         while True:
             station = input(turn + ' : ') #다시 입력받는 경우: 존재하지 않는 역 이름 언급, 이미 언급된 역 이름을 다시 언급
-            checkBomb(start_time, turn)
+            flag = checkBomb(start_time, turn)
+            if (flag== True):
+                return turn
             if (station in stations) and (station not in mention):
                 mention.append(station)
                 break
@@ -80,9 +84,12 @@ def bomb(turn, players, player_dic):
                 time.sleep(random.random() * 3)
                 station = stations[random.randint(0, 52)]  #다시 입력받는 경우: 이미 언급된 역 이름을 다시 언급
                 print('%s : %s' %(player, station))
-                checkBomb(start_time, player)
+                flag = checkBomb(start_time, player)
+                if (flag== True):
+                    return player
                 if station not in mention:
                     mention.append(station)
                     break
             print('    💣 폭탄넘기기 성공!')
+            
 

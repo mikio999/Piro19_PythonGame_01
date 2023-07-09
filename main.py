@@ -8,10 +8,7 @@ from bs4 import BeautifulSoup as bs
 from datetime import datetime
 import time
 
-
-
 # player_dic = {} # {'player': [life, left_life] }
-
 
 # 1~3
     

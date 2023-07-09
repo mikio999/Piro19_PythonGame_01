@@ -1,8 +1,9 @@
 import random as r 
 import game1
-import fc_updown_game
+import game2
 import game3
 import game5
+import gameover
 
 ##############Example#############
 """ guest_number = 2
@@ -46,6 +47,9 @@ def result (my_name, my_life):
     print('             🍺 4. 아파트게임                          ')
     print('             🍺 5. (정한)                             ')
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+   
+    import copy
+    player_dic_forgame5 = copy.deepcopy(player_dic)
 
     players= []
     for key, value in player_dic.items():
@@ -61,9 +65,10 @@ def result (my_name, my_life):
             value.append(0)
         if key == players[0] :
             value.append(1)
-
-
     game_choose=0
+    print('test')
+    print(player_dic_forgame5)
+
     while True :
         if turn == players[0]:
             game_choose = int(input(turn + '(이)가 좋아하는 랜덤 게임~무슨게임? : '))
@@ -74,13 +79,15 @@ def result (my_name, my_life):
         if game_choose == 1 :
             loser = game1.apart(players, len(players))
         elif game_choose ==2 :
-            fc_updown_game.updown_game(player_dic, turn)
+            game2.updown_game(player_dic, turn)
         elif game_choose ==5 :
-            game5.game5()
-        """  elif game_choose ==3 :
+            print('adsfad')
+            print(player_dic_forgame5 )
+            game5.game5(player_dic_forgame5,players,turn)
+        elif game_choose ==3 :
                 loser = game3.bomb(turn, players, player_dic)
         elif game_choose ==4 :
-            pass """
+            pass
 
 
         for key, value in player_dic.items():
@@ -108,5 +115,8 @@ def result (my_name, my_life):
                     value[2]= 1
                     while_a = 1
 
-    for key, value in player_dic.items():   
-        del value[2]
+        for key, value in player_dic.items():
+            if value[1]==0:
+                gameover.game_over(key)
+
+

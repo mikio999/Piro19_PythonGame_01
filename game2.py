@@ -4,7 +4,7 @@ def updown_game(player_dic, turn):
     fst_num = random.randint(1, 101)
     print("UPDOWN 게임을 시작합니다. 범위는 1~100입니다. 패배자는 승리자의 직전 사람입니다.")
 
-    players = list(player_dic.keys()) + [turn]
+    players = list(player_dic.keys()) 
     total_players = len(players)
     gturn = 0
     

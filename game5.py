@@ -2,22 +2,24 @@ import random
 from time import *
 
 ##############Example#############
-guest_number = 2
-player_dic = {'정곤':[4,2],'현지':[5,1],'민경':[5,1]}
-player='정곤'
+
 
 #player_dic = {이름,[life,left_life], 내 숫자, 고른 숫자}
-number ='0' ##현재 number
-count = '0' ##총 number
-host = player ##게임을 시작한 사람 입력##
+ ##총 number
+##게임을 시작한 사람 입력##
 
-def game5():
+def game5(player_dic,players,turn):
+    host = turn
+    player=players[0]
+    guest_number = len(players) - 1
     i=0
+    number ='0' ##현재 number
+    count = '0'
     for key, value in player_dic.items():
         value.append(i)
         i=i+1
     print(len(player_dic))
-
+    print(player_dic)
     while True:
         try:
             for key, value in player_dic.items():
