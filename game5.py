@@ -14,7 +14,7 @@ def game5(player_dic,players,turn):
     guest_number = len(players) - 1
     i=0
     number ='0' ##현재 number
-    count = '0'
+    count = 0
     for key, value in player_dic.items():
         value.append(i)
         i=i+1
@@ -91,6 +91,7 @@ def game5(player_dic,players,turn):
     e='   '
     f='   '
     n='   '
+    
 
 
     i=1

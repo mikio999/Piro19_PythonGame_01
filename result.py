@@ -118,5 +118,6 @@ def result (my_name, my_life):
         for key, value in player_dic.items():
             if value[1]==0:
                 gameover.game_over(key)
+                exit()
 
 
