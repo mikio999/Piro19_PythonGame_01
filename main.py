@@ -36,6 +36,8 @@ def main_game ():
     #1~3 intro 함수: return [name, life] 
     my_name, my_life = intro.intro()
 
+    #1
+
     #4
 
     #while (True) :
