@@ -2,6 +2,7 @@ import math
 import random
 import intro
 import game1
+import game3
 
 # def lose_life () : #괄호안에 loser 들어감, 6번 담당
    
