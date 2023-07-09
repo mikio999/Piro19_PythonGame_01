@@ -12,7 +12,6 @@ import random
 
 
 # 임시 데이터
-dict_players = {'A':[2,2], 'B':[4,4], 'C':[6,6]} # { player:[life, left_life] }
 players = ['B', 'C']
 
 
@@ -55,7 +54,7 @@ def checkBomb(start_time, player):
         printMiniGameOutro(player)
         exit()
 
-def bomb():
+def bomb(player_dic):
     #폭탄돌리기 게임에 필요한 정보
     stations = getStationInfoByScraping()
     mention = [] # 언급된 지하철 역 이름

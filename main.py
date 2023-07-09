@@ -4,10 +4,8 @@ import intro
 import result
 import game1
 import game3
+import gameover
 
-def lose_life () : #괄호안에 loser 들어감, 6번 담당
-   
-    return
 
 # player_dic = {} # {'player': [life, left_life] }
 
@@ -36,20 +34,15 @@ def main_game ():
     #1~3 intro 함수: return [name, life] 
     my_name, my_life = intro.intro()
 
-    #1
-
     #4
 
     #while (True) :
         #5
-        
-        #game 1,2,3,4,5
-        # game1.apart(pNum)
-        
+    result.result()
         #6
-        result.result()
     #7
-
+    gameover.game_over()
+    
 main_game()
 
 
