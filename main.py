@@ -2,9 +2,12 @@ import math
 import random
 import intro 
 import result
-import game1
-import game3
-import gameover
+#import gameover
+import requests
+from bs4 import BeautifulSoup as bs
+from datetime import datetime
+import time
+
 
 
 # player_dic = {} # {'player': [life, left_life] }
@@ -38,10 +41,10 @@ def main_game ():
 
     #while (True) :
         #5
-    result.result()
+    result.result(my_name, my_life)
         #6
     #7
-    gameover.game_over()
+    #gameover.game_over(player_dic)
     
 main_game()
 

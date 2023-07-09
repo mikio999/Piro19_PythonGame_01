@@ -11,10 +11,6 @@ import random
 # 폭탄 터진 사람이 loser
 
 
-# 임시 데이터
-players = ['B', 'C']
-
-
 # 스크래핑으로 지하철 7호선 역 정보 얻어오는 함수
 def getStationInfoByScraping():
     url = "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%A7%80%ED%95%98%EC%B2%A0_7%ED%98%B8%EC%84%A0"
@@ -47,17 +43,22 @@ def printMiniGameOutro(loser):
     print('--------------------  [GAME OVER]  --------------------')
     sleep1Sec()
     print('--------------------- loser는 %s  ----------------------' %loser)
+   
 
 def checkBomb(start_time, player):
     current_time = datetime.now()
     if (current_time - start_time).seconds >= 30:
         printMiniGameOutro(player)
-        exit()
+        
 
-def bomb(player_dic):
+def bomb(turn, players, player_dic):
     #폭탄돌리기 게임에 필요한 정보
     stations = getStationInfoByScraping()
     mention = [] # 언급된 지하철 역 이름
+    players_wt= []
+    for i in players :
+        if i != turn :
+            players_wt.append(i)
 
     printMiniGameIntro()
     start_time = datetime.now()
@@ -65,14 +66,16 @@ def bomb(player_dic):
     while True:
 
         while True:
-            station = input('A : ') #다시 입력받는 경우: 존재하지 않는 역 이름 언급, 이미 언급된 역 이름을 다시 언급
-            checkBomb(start_time, 'A')
+            station = input(turn + ' : ') #다시 입력받는 경우: 존재하지 않는 역 이름 언급, 이미 언급된 역 이름을 다시 언급
+            checkBomb(start_time, turn)
             if (station in stations) and (station not in mention):
                 mention.append(station)
                 break
         print('    💣 폭탄넘기기 성공!')
 
-        for player in players:
+        print(players)
+      
+        for player in players_wt:
             while True:
                 time.sleep(random.random() * 3)
                 station = stations[random.randint(0, 52)]  #다시 입력받는 경우: 이미 언급된 역 이름을 다시 언급
@@ -82,3 +85,4 @@ def bomb(player_dic):
                     mention.append(station)
                     break
             print('    💣 폭탄넘기기 성공!')
+
