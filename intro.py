@@ -39,5 +39,4 @@ def intro():
         except Exception as e:
             print("예외가 발생했습니다.", e)
         
-        
-        
+    return [name, life * 2]
