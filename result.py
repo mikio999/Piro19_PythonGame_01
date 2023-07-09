@@ -94,3 +94,6 @@ while j<=10 :
                 turn = key
                 value[2]= 1
                 while_a = 1
+
+for key, value in player_dic.items():   
+    del value[2]
