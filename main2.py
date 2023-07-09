@@ -1,0 +1,3 @@
+result.result()
+
+import result
