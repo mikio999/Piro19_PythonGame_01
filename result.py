@@ -66,24 +66,22 @@ def result (my_name, my_life):
         if key == players[0] :
             value.append(1)
     game_choose=0
-    print('test')
-    print(player_dic_forgame5)
+
 
     while True :
         if turn == players[0]:
             game_choose = int(input(turn + '(이)가 좋아하는 랜덤 게임~무슨게임? : '))
         else:
             game_choose = r.randrange(1,6)
-        print(game_choose)
+    
+        print(turn + '님이 ' + str(game_choose) + '번 게임을 선택하셨습니다.'  )
 
         if game_choose == 1 :
             loser = game1.apart(players, len(players))
         elif game_choose ==2 :
-            game2.updown_game(player_dic, turn)
+            loser = game2.updown_game(player_dic, turn)
         elif game_choose ==5 :
-            print('adsfad')
-            print(player_dic_forgame5 )
-            game5.game5(player_dic_forgame5,players,turn)
+            loser = game5.game5(player_dic_forgame5,players,turn)
         elif game_choose ==3 :
                 loser = game3.bomb(turn, players, player_dic)
         elif game_choose ==4 :

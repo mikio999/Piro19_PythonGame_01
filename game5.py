@@ -18,8 +18,7 @@ def game5(player_dic,players,turn):
     for key, value in player_dic.items():
         value.append(i)
         i=i+1
-    print(len(player_dic))
-    print(player_dic)
+
     while True:
         try:
             for key, value in player_dic.items():
@@ -50,13 +49,20 @@ def game5(player_dic,players,turn):
                     print('2 이하의 정수를 입력했습니다.')  
                 else : 
                     break
-                        
+
     print('\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     print('아싸 신난다 ~ 아싸 재미난다 ~ 더 게임 오브데스 !!')
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
+    
+    
+    if host != player : 
+        sleep(1)
+        count = random.randrange(1,11)
+        print (host + ' : ' + str(count))
 
-
+    sleep(1)
+    print('================지목 결과============')
     print(player + ' ----> ' + choose)
     for key, value in player_dic.items():
         if key != player:
@@ -70,7 +76,7 @@ def game5(player_dic,players,turn):
                             print(a_key + ' ----> ' + key)
                     break    
 
-
+    sleep(1)
     print('\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     print('게임 시작!!')
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -102,7 +108,6 @@ def game5(player_dic,players,turn):
                 turn = key
             if value[2] == next_turn:
                 next_turn = key
-        print (i)
 
         if len(player_list)==4 :
             p_0=player_list[0]
@@ -137,15 +142,20 @@ def game5(player_dic,players,turn):
                     f = ' ↑ '
                 if next_turn == player_list[2] : 
                     e = ' ← '
+            print ('                ' +  str(i))
             print(f'''
-
 
         {p_0} {c} {c} {c} {c} {p_1}
         {d}  {b} {n} {n} {a}  {f}               
         {d}  {n} {b} {a} {n}  {f}  
         {d}  {n} {a} {b} {n}  {f}           
         {d}  {a} {n} {n} {b}  {f}  
-        {p_1} {e} {e} {e} {e} {p_1}
+        {p_2} {e} {e} {e} {e} {p_3}
+
+
+
+
+
         ''')
             
 
@@ -168,11 +178,17 @@ def game5(player_dic,players,turn):
                     c = ' ↖ '
                 if next_turn == player_list[1] : 
                     a = ' ← '
+            print ('               ' +  str(i))
             print(f'''
                 {p_0}
                 {b}  {c} 
             {b}  {n}  {c}   
         {p_1} {a} {a} {p_2}
+
+
+
+
+
         ''')
             
         if len(player_list)==2 :
@@ -182,9 +198,15 @@ def game5(player_dic,players,turn):
                 a = ' → '
             if turn == player_list[1] :
                 a = ' ← '
-
+            print ('                  ' +  str(i))
             print(f'''
         {p_0} {a} {a} {a} {p_1}
+
+
+
+
+
+
         ''')
             
         a='   '
@@ -210,7 +232,4 @@ def game5(player_dic,players,turn):
         del value[3]    
         del value[2]
 
-    print(loser)
-    print(player_dic)
-
-
+    return loser
