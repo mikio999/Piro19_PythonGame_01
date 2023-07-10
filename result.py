@@ -73,6 +73,7 @@ def result (my_name, my_life):
     for key, value in player_dic.items():
         players.append(key)
 
+    print(players)
     turn= players[0]
 
 
@@ -84,6 +85,8 @@ def result (my_name, my_life):
             value.append(1)
     game_choose=0
 
+    
+    mention = [players[0]]
 
     while True :
         if turn == players[0]:
@@ -119,30 +122,19 @@ def result (my_name, my_life):
         for key, value in player_dic.items():
             print(key + '은(는) 지금까지' + str(value[0]-value[1]) + '🍺! 치사량까지' + str(value[1]))
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        i=0
 
-        for key, value in player_dic.items():
-            if value[2] == 1:
-                i = i+1
+        if len(mention) == len(players) :
+            mention = []
 
-        if i == len(player_dic):
-            for key, value in player_dic.items():
-                value[2]=0
-        print(players)
-        print(player_dic)
-        while_a = 0
-        while while_a == 0 :
-            i = r.randrange(0,len(player_dic))
-            for key, value in player_dic.items():
-                # if value[2] == 0 and players[i] == key:
-                if value[2] == 0:
-                    turn = key
-                    value[2]= 1
-                    while_a = 1
+        while True :
+            i = r.randrange(0,len(players))
+            turn = players[i]
+            if turn not in mention:
+                mention.append(turn)
+                break
 
         for key, value in player_dic.items():
             if value[1]==0:
                 gameover.game_over(key)
                 exit()
-
 

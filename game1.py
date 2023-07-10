@@ -6,17 +6,19 @@
 # loser 반환
 
 import random
+import time
 def apart(players, pNum):
-    while True:
-        start = input("아파트게임을 시작하시겠습니까? (y/n) : ")
-        if (start == "y"):
-            break
-        else:
-            print("게임을 시작하려면 y를 눌러주세요")
+    # while True:
+    #     start = input("아파트게임을 시작하시겠습니까? (y/n) : ")
+    #     if (start == "y"):
+    #         break
+    #     else:
+    #         print("게임을 시작하려면 y를 눌러주세요")
 
     print("아~파트아파트! 아~파트아파트! 몇층에 살까?")
     floor = random.randrange(5, 30)
     print(f"!!!!!!!! {floor}층!!!!!!!!")
+    time.sleep(1)
 
     playersHand = []
     for p in range(0, pNum):
@@ -32,7 +34,7 @@ def apart(players, pNum):
                 print(f"|{h}| <= {f}층")
             else:
                 print(f"|{h}|")
-    
+        time.sleep(0.7)
         turn = playersHand.pop(-1)
         playersHand.insert(0, turn)
         
