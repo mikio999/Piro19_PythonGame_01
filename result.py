@@ -66,8 +66,7 @@ def result (my_name, my_life):
         if key == players[0] :
             value.append(1)
     game_choose=0
-    print('test')
-    print(player_dic_forgame5)
+
 
     while True :
         if turn == players[0]:
