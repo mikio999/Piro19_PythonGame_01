@@ -1,5 +1,5 @@
 def game_over(key):
-  print(key + '가 뒤짐')
+  print(key + '가 전사했습니다')
       
   print("""
 

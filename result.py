@@ -5,12 +5,29 @@ import game3
 import game4
 import game5
 import gameover
+import time
 
 ##############Example#############
 """ guest_number = 2
 player_dic = {'정곤':[4,2],'현지':[5,1],'민경':[4,3]}
 player='정곤'
 loser='정곤' """
+def tell_start(turn, game_choose):
+    game_list = ['', '아파트게임', 'updown 게임', '폭탄돌리기', '쥐를 잡자', '더게임오브데스']
+
+    sleep1Sec()
+    print('%s 님이 %s을(를) 선택하셨습니다!' %(turn, game_list[game_choose]))
+    print()
+    print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
+    sleep1Sec()
+    print("✨✨✨✨✨✨✨✨✨✨ [NICE GAME] ✨✨✨✨✨✨✨✨✨✨✨")
+    sleep1Sec()
+    print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
+    sleep1Sec()
+
+def sleep1Sec():
+    time.sleep(1)
+
 def result (my_name, my_life):
     player_dic = { my_name : [my_life,my_life] } # { host name : [life, left-life] }
     players_hj= ['정곤', '현지', '환희', '정한', '민경']
@@ -31,7 +48,7 @@ def result (my_name, my_life):
             if players_hj[players_idx] not in player_dic: # 이미 초대된 player 제외
                 player_dic[players_hj[players_idx]] = []
                 break
-        life = r.randint(1, 5) * 2
+        life = r.randint(2, 6) 
         player_dic[players_hj[players_idx]] = [life, life]
         print('오늘 함께 취할 친구는 %s입니다 ! (치사량 : %d)' %(players_hj[players_idx], life))
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -82,7 +99,7 @@ def result (my_name, my_life):
                     print("예외가 발생했습니다", e)
         else:
             game_choose = r.randrange(1,6)
-    
+        tell_start(turn, game_choose)
         print(turn + '님이 ' + str(game_choose) + '번 게임을 선택하셨습니다.'  )
 
         if game_choose == 1 :
