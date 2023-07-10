@@ -2,7 +2,7 @@ import random
 
 def updown_game(player_dic, turn):
     fst_num = random.randint(1, 100)
-    print("UPDOWN 게임을 시작합니다. 범위는 1~100입니다. 패배자는 승리자의 직전 사람입니다.")
+    print("UPDOWN 게임을 시작합니다. 범위는 1~100입니다. 패배자는 승리자의 다음 사람입니다.")
 
     players = list(player_dic.keys()) 
     total_players = len(players)
@@ -27,17 +27,17 @@ def updown_game(player_dic, turn):
         
         if crt_num == fst_num:
             print("승자는", player)
-            loser = players[(gturn - 1) % total_players]
+            loser = players[(gturn + 1) % total_players]
             break
         
         if crt_num > fst_num:
             print("DOWN!")
-            max_num = min(crt_num, max_num)
+            max_num = min(crt_num - 1, max_num)
         else:
             print("UP!")
-            min_num = max(crt_num, min_num)
+            min_num = max(crt_num + 1, min_num)
         
         gturn += 1
     
-    print("패배자인 승자의 직전 턴 사람은", loser)
+    print("패배자인 승자의 다음 턴 사람은", loser)
     return loser
