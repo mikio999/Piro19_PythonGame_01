@@ -4,7 +4,6 @@
 # player 수를 매개변수로 받아옴. 
 # 이름은 아직 모르기때문에 p1, p2, p3.. 이런식으로 임의로 이름매김
 # loser 반환
-pNum = ['곽','띵','별']
 
 import random
 def apart(players, pNum):
@@ -34,5 +33,3 @@ def apart(players, pNum):
     loser = playersHand[0]
     print(f"🚨🚨{loser} 패배🚨🚨")
     return loser
-
-apart(pNum)

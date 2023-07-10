@@ -5,7 +5,7 @@ import time
 players = ['A', 'B', 'C', 'user']
 
 def mouse_game(players):
-    phrases = ['쥐', '를', '잡', '자', '쥐를', '잡자', '쥐를 잡자', '찍찍찍', '몇 마리?']
+    phrases = ['쥐…ᘛ⁐̤ᕐᐷ', '를', '잡', '자', '쥐를…ᘛ⁐̤ᕐᐷ', '잡자', '쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ', '몇 마리?']
     active_choice = ['잡았다', '놓쳤다', '풀었다']
     loser = ''
 
@@ -68,14 +68,15 @@ def mouse_game(players):
                         time.sleep(0.5)
                     else:
                         print(play_turn + ':' + user_phrase)
-                        print("쥐는 음수가 될 수 없습니다. 찍찍 > ' A ' <")
-                        user = loser
-                        print(user, "의 패배!")
+                        print("쥐는 음수가 될 수 없습니다. 찍찍 🐭 술이 먹고 싶었어?")
+                        loser="user"
+                        print(loser, "의 패배!")
                         time.sleep(0.5)
                         return loser
                 
                 if user_phrase not in active_choice:
-                    print("찍찍찍찍찍!!!> ' A ' <!!!:")
+                    print("🐭🐭🐭🐭찍찍찍찍찍!!!🐭🐭🐭🐭")
+                    print("술이 들어간다! 쭉쭉쭉쭉 쭉쭉쭉쭉")
                     loser="user"
                     print(f"{loser} 의 패배!")
                     time.sleep(0.5)
@@ -85,9 +86,10 @@ def mouse_game(players):
             play_turn = players[(players.index(play_turn) + 1) % len(players)]
 
             if caught_mice == num_mice:
-                print("찍찍찍찍찍!!!> ' A ' <!!!:")
+                print("~(=^･ω･^)ﾍ >ﾟ)))彡 고양이가 나타났다!")
+                time.sleep(0.5)
                 start_time = time.time()
-                result = input()
+                result = input("hint) what does the cat say?:")
                 end_time = time.time()
 
                 if result == '야옹' and end_time - start_time <= 3:
@@ -99,6 +101,7 @@ def mouse_game(players):
                 else:
                     loser = "user"
                     print("user의 패배!")
+                    print("동구밭~ 과수원 샷!")
                     return loser
 
     else: 
