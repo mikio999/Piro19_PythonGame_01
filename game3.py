@@ -56,8 +56,7 @@ def checkBomb(start_time, player):
     return False 
         
 
-def bomb(turn, players, me):
-
+def bomb(turn, players, me, player_num):
     #폭탄돌리기 게임에 필요한 정보
     stations = getStationInfoByScraping()
     mention = [] # 언급된 지하철 역 이름
@@ -67,9 +66,9 @@ def bomb(turn, players, me):
 
     idx = players.index(turn)
     orders = [idx]
-    for i in range(2):
+    for i in range(player_num-1):
         idx += 1
-        idx %= 3
+        idx %= player_num
         orders.append(idx)
 
     while True:
