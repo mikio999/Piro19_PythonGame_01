@@ -73,7 +73,6 @@ def result (my_name, my_life):
     for key, value in player_dic.items():
         players.append(key)
 
-    print(players)
     turn= players[0]
 
 
@@ -129,12 +128,14 @@ def result (my_name, my_life):
         if i == len(player_dic):
             for key, value in player_dic.items():
                 value[2]=0
-
+        print(players)
+        print(player_dic)
         while_a = 0
         while while_a == 0 :
             i = r.randrange(0,len(player_dic))
             for key, value in player_dic.items():
-                if value[2] == 0 and players[i] == key:
+                # if value[2] == 0 and players[i] == key:
+                if value[2] == 0:
                     turn = key
                     value[2]= 1
                     while_a = 1
