@@ -11,17 +11,11 @@ import time
 # player_dic = {} # {'player': [life, left_life] }
 
 def main_game ():
-    #1~3 intro 함수: return [name, life] 
+    
     my_name, my_life = intro.intro()
-    # intro.intro()
 
-    #4
-
-    #while (True) :
-        #5
     result.result(my_name, my_life)
-        #6
-    #7
+
 
     
 main_game()

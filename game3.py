@@ -13,7 +13,7 @@ import random
 
 # 스크래핑으로 지하철 7호선 역 정보 얻어오는 함수
 def getStationInfoByScraping():
-    url = "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%A7%80%ED%95%98%EC%B2%A0_7%ED%98%B8%EC%84%A0"
+    url = "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%A7%80%ED%95%98%EC%B2%A0_2%ED%98%B8%EC%84%A0"
     response = requests.get(url)
     soup = bs(response.text, "html.parser")
 
@@ -29,7 +29,7 @@ def sleep1Sec():
     time.sleep(1)
 
 def printMiniGameIntro():
-    print('----------    지하철 7호선 역 이름 말하기    ----------')
+    print('----------    지하철 2호선 역 이름 말하기    ----------')
     sleep1Sec()
     print('---------- 💣 30초 뒤에 폭탄이 터집니다. 💣 -----------')
     sleep1Sec()
@@ -80,16 +80,17 @@ def bomb(turn, players, player_dic):
         print(players)
       
         for player in players_wt:
-            while True:
-                time.sleep(random.random() * 3)
-                station = stations[random.randint(0, 52)]  #다시 입력받는 경우: 이미 언급된 역 이름을 다시 언급
-                print('%s : %s' %(player, station))
-                flag = checkBomb(start_time, player)
-                if (flag== True):
-                    return player
-                if station not in mention:
-                    mention.append(station)
-                    break
-            print('    💣 폭탄넘기기 성공!')
+            if player != turn :
+                while True:
+                    time.sleep(random.random() * 3)
+                    station = stations[random.randint(0, 52)]  #다시 입력받는 경우: 이미 언급된 역 이름을 다시 언급
+                    print('%s : %s' %(player, station))
+                    flag = checkBomb(start_time, player)
+                    if (flag== True):
+                        return player
+                    if station not in mention:
+                        mention.append(station)
+                        break
+                print('    💣 폭탄넘기기 성공!')
             
 

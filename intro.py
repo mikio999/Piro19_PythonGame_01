@@ -34,7 +34,7 @@ def intro():
             if (life < 1 or life > 5):
                 raise Exception("1~5을 선택해주세요")
             else:
-                print(f"🍺 당신의 주량은 {life}잔입니다 🍺")
+                print(f"🍺 당신의 주량은 {life * 2}잔입니다 🍺")
                 break
         except Exception as e:
             print("예외가 발생했습니다.", e)
