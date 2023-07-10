@@ -58,7 +58,7 @@ def game5(player_dic,players,turn):
     
     if host != player : 
         sleep(1)
-        count = random.randrange(1,11)
+        count = random.randrange(5,11)
         print (host + ' : ' + str(count))
 
     sleep(1)
