@@ -2,6 +2,7 @@ import random as r
 import game1
 import game2
 import game3
+import game4
 import game5
 import gameover
 
@@ -87,7 +88,8 @@ def result (my_name, my_life):
         elif game_choose ==3 :
                 loser = game3.bomb(turn, players, player_dic)
         elif game_choose ==4 :
-            pass
+            game4.mouse_game(players)
+            
 
 
         for key, value in player_dic.items():

@@ -1,11 +1,12 @@
 import random
 import time
+# from main import my_name
 
-
-players = ['A', 'B', 'C', 'user']
+my_name="은우"
+players = [my_name, 'A', 'B', 'C']
 
 def mouse_game(players):
-    phrases = ['쥐…ᘛ⁐̤ᕐᐷ', '를', '잡', '자', '쥐를…ᘛ⁐̤ᕐᐷ', '잡자', '쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ', '몇 마리?']
+    phrases = ['쥐…ᘛ⁐̤ᕐᐷ', '를', '잡', '자', '쥐를…ᘛ⁐̤ᕐᐷ', '잡자', '쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ','쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ', '몇 마리?']
     active_choice = ['잡았다', '놓쳤다', '풀었다']
     loser = ''
 
@@ -24,7 +25,7 @@ def mouse_game(players):
             try:
                 num_mice = int(input("몇 마리? > ' A ' < (최대 다섯 마리): "))
                 if 1 <= num_mice <= 5:
-                    print("user:", num_mice)
+                    print(play_turn,":", num_mice)
                     break
                 else:
                     print("1,2,3,4,5 중 하나를 입력하시오.")
@@ -36,7 +37,7 @@ def mouse_game(players):
     play_turn = players[0]
     if caught_mice < num_mice:
         while True:
-            if play_turn != 'user':
+            if play_turn != my_name:
                 phrase = random.choice(['잡았다', '놓쳤다', '풀었다'])
                 if phrase == '잡았다':
                     caught_mice += 1
@@ -69,7 +70,7 @@ def mouse_game(players):
                     else:
                         print(play_turn + ':' + user_phrase)
                         print("쥐는 음수가 될 수 없습니다. 찍찍 🐭 술이 먹고 싶었어?")
-                        loser="user"
+                        loser=play_turn
                         print(loser, "의 패배!")
                         time.sleep(0.5)
                         return loser
@@ -77,7 +78,7 @@ def mouse_game(players):
                 if user_phrase not in active_choice:
                     print("🐭🐭🐭🐭찍찍찍찍찍!!!🐭🐭🐭🐭")
                     print("술이 들어간다! 쭉쭉쭉쭉 쭉쭉쭉쭉")
-                    loser="user"
+                    loser=play_turn
                     print(f"{loser} 의 패배!")
                     time.sleep(0.5)
                     return loser
@@ -93,20 +94,20 @@ def mouse_game(players):
                 end_time = time.time()
 
                 if result == '야옹' and end_time - start_time <= 3:
-                    players.remove("user")
+                    players.remove(play_turn)
                     loser = random.choice(players)
                     print(loser, "의 패배!")
                     return loser
 
                 else:
-                    loser = "user"
-                    print("user의 패배!")
+                    loser = play_turn
+                    print(play_turn,"의 패배!")
                     print("동구밭~ 과수원 샷!")
                     return loser
 
     else: 
         print("쥐는 음수가 될 수 없습니다. 찍찍 > ' A ' <")
-        loser = "user"
+        loser = play_turn
         print(f"{loser} 의 패배!")
         time.sleep(0.5)
         return loser
