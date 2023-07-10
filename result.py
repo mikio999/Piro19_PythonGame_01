@@ -16,8 +16,8 @@ def tell_start(turn, game_choose):
     game_list = ['', '아파트게임', 'updown 게임', '폭탄돌리기', '쥐를 잡자', '더게임오브데스']
 
     sleep1Sec()
-    print('%s 님이 %s을(를) 선택하셨습니다!' %(turn, game_list[game_choose]))
     print()
+    print('%s 님이 %s을(를) 선택하셨습니다!' %(turn, game_list[game_choose]))
     print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
     sleep1Sec()
     print("✨✨✨✨✨✨✨✨✨✨ [NICE GAME] ✨✨✨✨✨✨✨✨✨✨✨")
@@ -101,7 +101,11 @@ def result (my_name, my_life):
         else:
             game_choose = r.randrange(1,6)
         tell_start(turn, game_choose)
-        print(turn + '님이 ' + str(game_choose) + '번 게임을 선택하셨습니다.'  )
+
+        while True: 
+            a = input('game을 시작하시겠습니까? (y) : ')
+            if a == 'y':
+                break
 
         if game_choose == 1 :
             loser = game1.apart(players)
