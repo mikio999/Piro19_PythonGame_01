@@ -5,6 +5,8 @@ import time
 my_name="은우"
 players = [my_name, 'A', 'B', 'C']
 
+# players = ['A', 'B', 'C', 'user']
+
 def mouse_game(players):
     phrases = ['쥐…ᘛ⁐̤ᕐᐷ', '를', '잡', '자', '쥐를…ᘛ⁐̤ᕐᐷ', '잡자', '쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ','쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ', '몇 마리?']
     active_choice = ['잡았다', '놓쳤다', '풀었다']
@@ -112,6 +114,6 @@ def mouse_game(players):
         time.sleep(0.5)
         return loser
 
-loser = mouse_game(players)
-print("쥐를 잡기 게임에서 패배자는!")
-print(loser)
+# loser = mouse_game(players)
+# print("쥐를 잡기 게임에서 패배자는!")
+# print(loser)

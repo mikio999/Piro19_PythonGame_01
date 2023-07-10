@@ -84,9 +84,9 @@ def result (my_name, my_life):
         elif game_choose ==5 :
             loser = game5.game5(player_dic_forgame5,players,turn)
         elif game_choose ==3 :
-                loser = game3.bomb(turn, players, player_dic)
+            loser = game3.bomb(turn, players, player_dic)
         elif game_choose ==4 :
-            game4.mouse_game(players)
+            loser = game4.mouse_game(players)
             
 
 
