@@ -7,15 +7,16 @@
 pNum = ['곽','띵','별']
 
 import random
-def apart(pNum):
+def apart(players, pNum):
+
     print("아~파트아파트! 아~파트아파트! 몇층에 살까?")
     floor = random.randrange(5, 30)
     print(f"!!!!!!!! {floor}층!!!!!!!!")
 
     playersHand = []
-    for p in range(1, pNum+1):
-        playersHand.append(f"p{p}")
-        playersHand.append(f"p{p}")
+    for p in range(0, pNum):
+        playersHand.append(players[p])
+        playersHand.append(players[p])
     
     random.shuffle(playersHand)
 
