@@ -2,7 +2,7 @@ import random
 import time
 
 
-players = ['A', 'B', 'C', 'user']
+# players = ['A', 'B', 'C', 'user']
 
 def mouse_game(players):
     phrases = ['쥐…ᘛ⁐̤ᕐᐷ', '를', '잡', '자', '쥐를…ᘛ⁐̤ᕐᐷ', '잡자', '쥐를 잡자!…ᘛ⁐̤ᕐᐷ!', '찍찍찍…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ…ᘛ⁐̤ᕐᐷ', '몇 마리?']
@@ -106,11 +106,11 @@ def mouse_game(players):
 
     else: 
         print("쥐는 음수가 될 수 없습니다. 찍찍 > ' A ' <")
-        loser = "user"
+        loser = play_turn
         print(f"{loser} 의 패배!")
         time.sleep(0.5)
         return loser
 
-loser = mouse_game(players)
-print("쥐를 잡기 게임에서 패배자는!")
-print(loser)
+# loser = mouse_game(players)
+# print("쥐를 잡기 게임에서 패배자는!")
+# print(loser)

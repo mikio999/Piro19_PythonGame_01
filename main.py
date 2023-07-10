@@ -22,7 +22,7 @@ def main_game ():
     result.result(my_name, my_life)
         #6
     #7
-    #gameover.game_over(player_dic)
+
     
 main_game()
 

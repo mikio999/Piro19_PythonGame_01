@@ -2,6 +2,7 @@ import random as r
 import game1
 import game2
 import game3
+import game4
 import game5
 import gameover
 
@@ -26,7 +27,7 @@ def result (my_name, my_life):
     # player 초대하기
     for i in range(int(n)):
         while True:
-            players_idx = r.randint(0, 3)
+            players_idx = r.randint(0, 4)
             if players_hj[players_idx] not in player_dic: # 이미 초대된 player 제외
                 player_dic[players_hj[players_idx]] = []
                 break
@@ -70,7 +71,15 @@ def result (my_name, my_life):
 
     while True :
         if turn == players[0]:
-            game_choose = int(input(turn + '(이)가 좋아하는 랜덤 게임~무슨게임? : '))
+            while True:
+                try:
+                    game_choose = int(input(turn + '(이)가 좋아하는 랜덤 게임~무슨게임? : '))
+                    if (game_choose < 1 or game_choose > 5):
+                        raise Exception("1~5 사이 숫자를 입력하세요")
+                    else:
+                        break
+                except Exception as e:
+                    print("예외가 발생했습니다", e)
         else:
             game_choose = r.randrange(1,6)
     
@@ -83,9 +92,9 @@ def result (my_name, my_life):
         elif game_choose ==5 :
             loser = game5.game5(player_dic_forgame5,players,turn)
         elif game_choose ==3 :
-                loser = game3.bomb(turn, players, player_dic)
+            loser = game3.bomb(turn, players, player_dic)
         elif game_choose ==4 :
-            pass
+            loser = game4.mouse_game(players)
 
 
         for key, value in player_dic.items():

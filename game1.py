@@ -7,6 +7,12 @@
 
 import random
 def apart(players, pNum):
+    while True:
+        start = input("아파트게임을 시작하시겠습니까? (y/n) : ")
+        if (start == "y"):
+            break
+        else:
+            print("게임을 시작하려면 y를 눌러주세요")
 
     print("아~파트아파트! 아~파트아파트! 몇층에 살까?")
     floor = random.randrange(5, 30)
