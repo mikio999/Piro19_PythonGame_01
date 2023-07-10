@@ -13,5 +13,5 @@ def main_game ():
     my_name, my_life = intro.intro()
     result.result(my_name, my_life)
 
-    
+
 main_game()

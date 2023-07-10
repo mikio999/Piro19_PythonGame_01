@@ -23,7 +23,7 @@ def getStationInfoByScraping():
     for stationAr in stationArs:
         stations.append(stationAr.text)
 
-    return stations
+    return list(set(stations))
 
 def sleep1Sec():
     time.sleep(1)
