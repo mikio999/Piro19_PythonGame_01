@@ -104,7 +104,7 @@ def result (my_name, my_life):
         print(turn + '님이 ' + str(game_choose) + '번 게임을 선택하셨습니다.'  )
 
         if game_choose == 1 :
-            loser = game1.apart(players, len(players))
+            loser = game1.apart(players)
         elif game_choose ==2 :
             loser = game2.updown_game(player_dic, turn)
         elif game_choose ==5 :
@@ -124,7 +124,7 @@ def result (my_name, my_life):
 
         if len(mention) == len(players) :
             mention = []
-
+      
         while True :
             i = r.randrange(0,len(players))
             turn = players[i]
