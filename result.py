@@ -73,7 +73,6 @@ def result (my_name, my_life):
     for key, value in player_dic.items():
         players.append(key)
 
-    print(players)
     turn= players[0]
 
 
@@ -111,7 +110,7 @@ def result (my_name, my_life):
         elif game_choose ==5 :
             loser = game5.game5(player_dic_forgame5,players,turn)
         elif game_choose ==3 :
-            loser = game3.bomb(turn, players, player_dic)
+            loser = game3.bomb(turn, players, my_name)
         elif game_choose ==4 :
             loser = game4.mouse_game(players)
 
